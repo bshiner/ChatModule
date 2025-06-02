@@ -1,0 +1,8 @@
+<?php
+// File: web_chat_widget/config/install/web_chat_widget.settings.yml
+enabled: false
+api_endpoint: ''
+api_key: ''
+welcome_message: 'Hello! How can I help you today?'
+position: 'bottom-right'
+theme: 'default'

@@ -1,0 +1,13 @@
+<?php
+// File: web_chat_widget/web_chat_widget.libraries.yml
+chat_widget:
+  version: 1.x
+  js:
+    js/chat-widget.js: {}
+  css:
+    theme:
+      css/chat-widget.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

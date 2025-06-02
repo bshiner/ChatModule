@@ -1,0 +1,17 @@
+<?php
+// File: web_chat_widget/web_chat_widget.routing.yml
+web_chat_widget.admin_settings:
+  path: '/admin/config/services/web-chat-widget'
+  defaults:
+    _form: '\Drupal\web_chat_widget\Form\WebChatWidgetSettingsForm'
+    _title: 'Web Chat Widget Settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+web_chat_widget.api_proxy:
+  path: '/web-chat-widget/api-proxy'
+  defaults:
+    _controller: '\Drupal\web_chat_widget\Controller\ApiProxyController::proxy'
+  requirements:
+    _permission: 'access content'
+  methods: [POST]

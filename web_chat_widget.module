@@ -1,0 +1,37 @@
+<?php
+// File: web_chat_widget/web_chat_widget.module
+
+/**
+ * @file
+ * Main module file for Web Chat Widget.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function web_chat_widget_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.web_chat_widget':
+      return '<p>' . t('This module provides a floating chat widget that integrates with external chatbot APIs.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function web_chat_widget_page_attachments(array &$attachments) {
+  $config = \Drupal::config('web_chat_widget.settings');
+  
+  if ($config->get('enabled')) {
+    $attachments['#attached']['library'][] = 'web_chat_widget/chat_widget';
+    $attachments['#attached']['drupalSettings']['webChatWidget'] = [
+      'apiEndpoint' => $config->get('api_endpoint'),
+      'apiKey' => $config->get('api_key'),
+      'welcomeMessage' => $config->get('welcome_message'),
+      'position' => $config->get('position'),
+      'theme' => $config->get('theme'),
+    ];
+  }
+}
