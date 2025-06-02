@@ -1,4 +1,3 @@
-<?php
 // File: web_chat_widget/web_chat_widget.libraries.yml
 chat_widget:
   version: 1.x

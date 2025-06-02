@@ -1,4 +1,3 @@
-<?php
 // File: web_chat_widget/config/install/web_chat_widget.settings.yml
 enabled: false
 api_endpoint: ''
